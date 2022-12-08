@@ -25,14 +25,17 @@ namespace Line_Comparison_Problem
             y4 = Convert.ToInt32(Console.ReadLine());
 
             double len1 = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
-            Console.WriteLine("length of the line 1" + len1);
+            Console.WriteLine("length of the line 1 " + len1);
             double len2 = Math.Sqrt(Math.Pow(x4 - x3, 2) + Math.Pow(y4 - y3, 2));
-            Console.WriteLine("length of the line 2" + len2);
+            Console.WriteLine("length of the line 2 " + len2);
 
-            if (len1.Equals(len2))
-                Console.WriteLine("Lines are equal in length.");
+            int diffInLength = len1.CompareTo(len2);
+            if (diffInLength == 0)
+                Console.WriteLine("Lines are equal in length");
+            else if (diffInLength > 0)
+                Console.WriteLine("Line1 is greater in length than Line2");
             else
-                Console.WriteLine("Lines are not equal in length.");
+                Console.WriteLine("Line1 is smaller in length than Line2");
         }
     }
 }
